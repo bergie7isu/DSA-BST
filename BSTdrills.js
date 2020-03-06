@@ -100,7 +100,52 @@ const thirdLargestNode = function(tree) {
   console.log(thirdLargestNode(BST123));
   console.log(thirdLargestNode(BSTabc));
 
-  //8. Balanced BST
-  
+//8. Balanced BST
+const newBST = new BinarySearchTree;
+newBST.insert(5);
+newBST.insert(6);
+newBST.insert(4);
+newBST.insert(3);
+newBST.insert(7);
+newBST.insert(4.5);
+newBST.insert(5.5);
+const balancedBST = function(tree) {
+  if (!tree) {
+    return true;
+  };
+  if (Math.abs(treeHeight(tree.left) - treeHeight(tree.right)) > 1) {
+    return false;
+  } else {
+    return balancedBST(tree.left) && balancedBST(tree.right);
+  };
+};
+console.log(balancedBST(BST123));
+console.log(balancedBST(BSTabc));
+console.log(balancedBST(newBST));
 
-  //9. Are they the same BSTs?
+//9. Are they the same BSTs?
+const sameBST = function(array1, array2) {
+  if (array1.length === 0 && array2.length === 0) {
+    return true;
+  };
+  if (array1.length !== array2.length) {
+    return false;
+  };
+  if (array1[0] !== array2[0]) {
+    return false;
+  };
+  const biggerThanRoot1 = [];
+  const smallerThanRoot1 = [];
+  const biggerThanRoot2 = [];
+  const smallerThanRoot2 = [];
+  for (let i = 1; i < array1.length; i++) {
+    array1[i] > array1[0] ? biggerThanRoot1.push(array1[i]) : smallerThanRoot1.push(array1[i]);
+    array2[i] > array2[0] ? biggerThanRoot2.push(array2[i]) : smallerThanRoot2.push(array2[i]);
+  };
+  return sameBST(biggerThanRoot1, biggerThanRoot2) && sameBST(smallerThanRoot1, smallerThanRoot2);
+};
+const array1 = [3, 5, 4, 6, 1, 0, 2];
+const array2 = [3, 1, 5, 2, 4, 6, 0];
+console.log(sameBST(array1, array2));
+const array3 = [3, 1, 6, 2, 4, 5, 0];
+console.log(sameBST(array1, array3));
