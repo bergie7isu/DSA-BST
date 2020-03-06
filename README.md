@@ -6,3 +6,4 @@ BST of 'EASYQUESTION'
 ## 2. Remove the root
 ![BST of numbers with root removed](/images/BST-numbers-removed-root.png?raw=true "BST-numbers-removed-root")
 ![BST of letters with root removed](/images/BST-letters-removed-root.png?raw=true "BST-letters-removed-root")
+asdf
